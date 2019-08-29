@@ -1,0 +1,7 @@
+<ul>
+    <p *ngFor="let gift of gifts">
+      <app-gift [name]="gift.name"
+            [numOfDonators]="gift.numOfDonators"
+            [maxNumOfDonators]="gift.maxNumOfDonators"></app-gift>
+    </p>
+  </ul>
