@@ -27,7 +27,14 @@ export class GiftComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            this.giftService.AddDonatorToGift(this.name, result);
+            this.giftService.AddDonatorToGift(this.name, result).subscribe(res => {
+				location.reload();
+				alert(res['message']);
+			}, err => {
+				console.log(err);
+				alert(err['error']['message']);
+			});
+			
         });
 
     }

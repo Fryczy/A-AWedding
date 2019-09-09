@@ -20,12 +20,10 @@ export class GiftService {
         return this.httpClient.get('http://localhost:8080/get_gifts', {headers: headers});
     }
 
-    AddDonatorToGift(name: string, email: string) {
+    AddDonatorToGift(name: string, email: string) : Observable<any> {
         const headers = new HttpHeaders();
         headers.set('Content-Type', 'application/json; charset=utf-8');
         headers.set('Access-Control-Allow-Origin', '*');
-        this.httpClient.post('http://localhost:8080/add_donator', {name: name, email: email}, {headers: headers}).subscribe((res)=>{
-            return res;
-        });
+        return this.httpClient.post('http://localhost:8080/add_donator', {name: name, email: email}, {headers: headers});
     }
 }

@@ -1,5 +1,11 @@
 var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+
 var app = express();
+
+app.use(cors());
+app.use(bodyParser.json())
 
 var mongoose = require('mongoose');
 
@@ -42,25 +48,25 @@ app.post('/add_donator', function(req, res) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     Item.find({name: name}, function(err, result) {
         if(result.length == 0) {
-            res.statusCode(400);
+            res.status(400);
             res.json({message: 'A megadott ajándék nem létezik!'});
         }
         else {
             var item = result[0];
             if(item['donators'].includes(email)) {
-                res.statusCode(400);
+                res.status(400);
                 res.json({message: 'Már adakozott erre az ajándékra ezzel az email címmel!'});
             }
             else if(item['maxDonators'] <= item['donators'].length){
-                res.statusCode(400);
+                res.status(400);
                 res.json({message: 'Az ajándékhoz összegyűltek már az adományozók!'});
             }
             else {
                 item['donators'].push(email);
                 item.save();
 
-                res.statusCode(200);
-                res.json({message: 'Ok'});
+                res.status(200);
+                res.json({message: 'Köszönjük!'});
             }
         }
     });
