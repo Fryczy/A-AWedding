@@ -21,16 +21,15 @@ export class GiftComponent implements OnInit {
     }
 
     donate() {
-        let email = '';
         const dialogRef = this.dialog.open(DonationDialogComponent, {
             width: '250px',
-            data : {email : email}
+            data : {email : ''}
         });
+
         dialogRef.afterClosed().subscribe(result => {
-            email = result;
+            this.giftService.AddDonatorToGift(this.name, result);
         });
-        console.log(email);
-        //this.giftService.AddDonatorToGift(name, email);
+
     }
 
 }
