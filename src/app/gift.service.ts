@@ -14,28 +14,10 @@ export class GiftService {
     }
 
     GetGifts() : Observable<any>{
-        /*const headers = new HttpHeaders();
+        const headers = new HttpHeaders();
         headers.set('Content-Type', 'application/json; charset=utf-8');
         headers.set('Access-Control-Allow-Origin', '*');
-        return this.httpClient.get('http://localhost:8080/get_gifts', {headers: headers});*/
-        let gifts = [
-            {
-                name: 'Vibrátor',
-                numOfDonators: 2,
-                maxNumOfDonators: 5
-            },
-            {
-                name: 'Cica',
-                numOfDonators: 3,
-                maxNumOfDonators: 10
-            },
-            {
-                name: 'Trabant',
-                numOfDonators: 1,
-                maxNumOfDonators: 3
-            },
-        ];
-        return of(gifts);
+        return this.httpClient.get('http://localhost:8080/get_gifts', {headers: headers});
     }
 
     AddDonatorToGift(name: string, email: string) {

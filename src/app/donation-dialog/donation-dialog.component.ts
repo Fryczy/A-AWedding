@@ -9,6 +9,7 @@ import { DialogData } from '../model/dialog_data';
 })
 export class DonationDialogComponent implements OnInit {
 
+  
   constructor(public dialogRef: MatDialogRef<DonationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
