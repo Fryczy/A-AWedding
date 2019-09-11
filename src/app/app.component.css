@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Andika');
 
+h1
+{
+  text-align: center;
+  font-family: Andika;
+}
 .navbar {
     width: 100%;
     background-color: whitesmoke;
@@ -13,7 +18,7 @@
     color:black;
     text-decoration: none;
     font-size: 17px;
-    width: 30%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    width: 23%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
     text-align: center; /* If you want the text to be centered */
     font-family: Andika;
 }
@@ -24,10 +29,7 @@
 }
 
 /* Style the current/active link */
-.nav-link.active {
-    background-image: linear-gradient(to  right, forestgreen, white 33%,white 66%,forestgreen 100% );
-    color: black;
-}
+
 
 /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
 @media screen and (max-width: 500px) {
