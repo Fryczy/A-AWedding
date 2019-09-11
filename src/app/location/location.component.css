@@ -17,12 +17,3 @@
   clear: both;
 }
 
-.locationBackground
-{
-  background-image: url("AA_Background_viragos.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
