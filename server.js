@@ -18,7 +18,7 @@ var itemSchema = new Schema({
 });
 
 var Item = mongoose.model('Item', itemSchema, 'Item');
-mongoose.connect('mongodb://localhost:27017/wedding');
+mongoose.connect('mongodb://34.65.107.181:27017/wedding');
 
 app.get('/get_gifts', function(req, res) {
     Item.find(function(err, results) {
